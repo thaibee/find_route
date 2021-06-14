@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Города{% endblock %}
+{% block content %}
+    <h2>Список городов</h2>
+    <ul class="list-unstyled fs-5">
+        {% for object in object_list %}
+            <li>
+                <a href="" class="href text-decoration-none list-group-item-action">{{ object }}</a>
+
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
