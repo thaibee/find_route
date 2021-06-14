@@ -5,7 +5,7 @@
     <ul class="list-unstyled fs-5">
         {% for object in object_list %}
             <li>
-                <a href="" class="href text-decoration-none list-group-item-action">{{ object }}</a>
+                <a href="{% url 'city' object.id %}" class="href text-decoration-none list-group-item-action">{{ object }}</a>
 
             </li>
         {% endfor %}
