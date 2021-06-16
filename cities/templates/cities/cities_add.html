@@ -1,15 +1,8 @@
 {% extends 'base.html' %}
-{% block title %}Города{% endblock %}
+{% block title %}Добавление города{% endblock %}
 {% block content %}
-    <h2>Список городов</h2>
-    <ul class="list-unstyled fs-5">
-        {% for object in model %}
-            <li>
-                <a href="{% url 'city' object.id %}"
-                   class="href text-decoration-none list-group-item-action">{{ object }}</a>
-            </li>
-        {% endfor %}
-    </ul>
+    <h2>Добавление города</h2>
+
     <div class="row">
         <div class="col-3 border border-light-2 p-3 rounded-3">
             <form method="post"> {% csrf_token %}
