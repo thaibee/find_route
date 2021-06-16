@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}Изменение города{% endblock %}
+{% block content %}
+    <h2>Изменение города</h2>
+
+    {% include "form.html" with button='Записать' %}
+    <a href="{% url 'delete' object.id %}" class="btn btn-danger mt-3">Удалить</a>
+
+{% endblock %}

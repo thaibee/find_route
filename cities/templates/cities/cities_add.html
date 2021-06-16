@@ -3,14 +3,6 @@
 {% block content %}
     <h2>Добавление города</h2>
 
-    <div class="row">
-        <div class="col-3 border border-light-2 p-3 rounded-3">
-            <form method="post"> {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit" class="btn btn-success form-control">Добавить город</button>
-            </form>
-        </div>
-    </div>
-
+    {% include "form.html" with button='Записать' %}
 
 {% endblock %}
