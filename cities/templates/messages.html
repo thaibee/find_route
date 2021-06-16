@@ -1,0 +1,16 @@
+<div class="row mt-3">
+    <div class="col-auto mx-auto">
+
+        {% if messages %}
+            {% for message in messages %}
+
+                <div{% if message.tags %} class=" h-50 pt-0 alert alert-{{ message.tags }}" role="alert"{% endif %}>
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                    {{ message }}
+                    <button type="button" class="btn-close align-middle ms-3" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
