@@ -6,9 +6,12 @@
         {% for object in object_list %}
             <li>
                 <a href="{% url 'city' object.id %}" class="href text-decoration-none list-group-item-action">{{ object }}</a>
-
             </li>
         {% endfor %}
     </ul>
+    <form method="post"> {% csrf_token %}
+        {{ form.as_p }}
+     <button type="submit" class="btn btn-success form-control">'Добавить город'</button>
+    </form>
 
 {% endblock %}
