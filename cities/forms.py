@@ -1,13 +1,13 @@
 from django import forms
-from cities.models import Cities
+from cities.models import City
 
 
-class CitiesForm(forms.ModelForm):
+class CityForm(forms.ModelForm):
     name = forms.CharField(label='', widget=forms.TextInput(attrs={
         'class': 'form-control',
         'placeholder': 'Введите название города',
     }))
 
     class Meta:
-        model = Cities
+        model = City
         fields = ('name',)

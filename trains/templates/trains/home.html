@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Поезда{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-8">
+            <table class="table table-striped table-hover text-center">
+                <thead>
+                <tr>
+                    <th>Номер поезда</th>
+                    <th>Откуда</th>
+                    <th>Куда</th>
+                    <th>Время в пути</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for object in object_list %}
+                    <tr>
+                        <th>{{ object.number_train }}</th>
+                        <th>{{ object.city_from }}</th>
+                        <th>{{ object.city_to }}</th>
+                        <th>{{ object.travel_time }}</th>
+                        <th>
+                            <a href="{% url 'trains:update' object.pk %}" class="btn btn-outline-secondary btn-sm">Изменить</a>
+                        </th>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <a href="{% url 'trains:add' %}" class="href btn btn-outline-success mt-5">Добавить маршрут</a>
+{% endblock %}

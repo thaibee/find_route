@@ -5,42 +5,42 @@ from django.urls import reverse, reverse_lazy
 from django.views import View
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
-from cities.forms import CitiesForm
-from cities.models import Cities
+from cities.forms import CityForm
+from cities.models import City
 
 
 class CitiesList(ListView):
-    model = Cities
-    form = CitiesForm()
-    template_name = 'cities/cities_list.html'
+    model = City
+    form = CityForm()
+    template_name = 'cities/home.html'
     paginate_by = 10
 
 
 class CityDetail(DetailView):
-    model = Cities
+    model = City
 
 
 class CityAdd(SuccessMessageMixin, CreateView):
-    model = Cities
-    form_class = CitiesForm
-    template_name = 'cities/cities_add.html'
-    success_url = reverse_lazy('cities_list')
+    model = City
+    form_class = CityForm
+    template_name = 'cities/add.html'
+    success_url = reverse_lazy('cities:home')
     success_message = 'Город успешно создан'
 
 
 class CityUpdate(SuccessMessageMixin, UpdateView):
-    model = Cities
-    form_class = CitiesForm
-    template_name = 'cities/cities_update.html'
-    success_url = reverse_lazy('cities_list')
+    model = City
+    form_class = CityForm
+    template_name = 'cities/update.html'
+    success_url = reverse_lazy('cities:home')
     success_message = 'Город успешно обновлен'
 
 
 class CityDelete(SuccessMessageMixin, DeleteView):
-    model = Cities
-    success_url = reverse_lazy('cities_list')
+    model = City
+    success_url = reverse_lazy('cities:home')
 
     def get(self, request, *args, **kwargs):  # удаление без подтверждения.
-        city_name = Cities.objects.filter(id=self.kwargs['pk'])[0]
+        city_name = City.objects.filter(id=self.kwargs['pk'])[0]
         messages.success(request, f'Город {city_name} удален')
         return self.post(self, request, *args, **kwargs)

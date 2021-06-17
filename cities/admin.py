@@ -3,7 +3,7 @@ from .models import *
 
 
 # Register your models here.
-@admin.register(Cities)
+@admin.register(City)
 class CityAdmin(admin.ModelAdmin):
     list_display = ('name',)
 

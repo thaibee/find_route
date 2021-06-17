@@ -5,7 +5,7 @@
     <ul class="list-unstyled fs-5">
         {% for object in object_list %}
             <li>
-                <a href="{% url 'update' object.id %}"
+                <a href="{% url 'cities:update' object.id %}"
                    class="href text-decoration-none list-group-item-action">{{ object }}</a>
             </li>
         {% endfor %}
@@ -44,5 +44,5 @@
         </ul>
     </nav>
 
-    <a href="{% url 'add' %}" class="href btn btn-outline-success mt-5">Добавить город</a>
+    <a href="{% url 'cities:add' %}" class="href btn btn-outline-success mt-5">Добавить город</a>
 {% endblock %}
