@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}Изменение маршрута{% endblock %}
+{% block content %}
+    <h2>Изменение маршрута</h2>
+
+    {% include "form.html" with button='Применить' %}
+    <a href="{% url 'trains:delete' object.id %}" class="btn btn-outline-danger mt-3">Удалить маршрут</a>
+
+{% endblock %}

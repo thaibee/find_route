@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'cities.apps.CitiesConfig',
     'trains.apps.TrainsConfig',
     'home.apps.HomeConfig',
+    'routes.apps.RoutesConfig'
 ]
 
 MIDDLEWARE = [

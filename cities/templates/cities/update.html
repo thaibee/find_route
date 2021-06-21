@@ -4,6 +4,6 @@
     <h2>Изменение города</h2>
 
     {% include "form.html" with button='Записать' %}
-    <a href="{% url 'cities:delete' object.id %}" class="btn btn-danger mt-3">Удалить</a>
+    <a href="{% url 'cities:delete' object.id %}" class="btn btn-outline-danger mt-3">Удалить</a>
 
 {% endblock %}

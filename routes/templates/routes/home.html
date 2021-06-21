@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Поиск{% endblock %}
+
+{% block content %}
+    <h5>Поиск Маршрута</h5>
+    {% url 'find_route' as action %}
+    {% include 'form.html' with button='Найти' action=action %}
+
+    {#    <a href="{% url 'trains:add' %}" class="href btn btn-outline-success mt-5">Добавить маршрут</a>#}
+{% endblock %}

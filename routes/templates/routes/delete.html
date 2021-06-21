@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Удаление поезда{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-4 border border-light-2 p-3 rounded-3">
+            <h2 class="text-center">Удаление маршрута</h2>
+            <form method="post">{% csrf_token %}
+                <p class="fs-5">Вы уверены что хотите удалить маршрут {{ object }}?</p>
+                <button type="submit" class="btn btn-success form-control">Удалить</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
